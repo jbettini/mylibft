@@ -16,14 +16,23 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include <fcntl.h>
 
+typedef unsigned long long t_ull;
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }				t_list;
 
+# define FD_MAX 255
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 1
+#endif
 
+char	*get_next_line(int fd);
+int		ft_isin(char *str, int c);
+char	*ft_strjoin_gnl(char *save, char *buf);
 char	*ft_strncat(char *dest, const char *src, size_t n);
 int		ft_check_base(char *base);
 int		ft_is_prime(int nb);
