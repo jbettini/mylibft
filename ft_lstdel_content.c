@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel_content.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 18:08:51 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/11 21:11:44 by jbettini         ###   ########.fr       */
+/*   Created: 2021/12/15 18:11:18 by jbettini          #+#    #+#             */
+/*   Updated: 2021/12/16 16:41:48 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstdel_content(void *content)
 {
-	t_list	*li;
-
-	li = malloc(sizeof(t_list));
-	if (!li)
-		return (NULL);
-	li->content = content;
-	li->next = NULL;
-	return (li);
+	content = NULL;
 }

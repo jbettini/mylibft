@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_print_split.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jbettini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 18:08:51 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/11 21:11:44 by jbettini         ###   ########.fr       */
+/*   Created: 2021/12/25 14:41:51 by jbettini          #+#    #+#             */
+/*   Updated: 2021/12/25 14:41:56 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_print_split(char **split)
 {
-	t_list	*li;
+	int	i;
 
-	li = malloc(sizeof(t_list));
-	if (!li)
-		return (NULL);
-	li->content = content;
-	li->next = NULL;
-	return (li);
+	i = 0;
+	while (split[i])
+	{
+		write(1, "str ", 4);
+		ft_putnbr(i + 1);
+		write(1, " of split\n", 10);
+		ft_putstr(split[i]);
+		write(1, "\n\n", 2);
+		i++;
+	}
 }

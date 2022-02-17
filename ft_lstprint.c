@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstprint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rahmed <rahmed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 18:08:51 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/11 21:11:44 by jbettini         ###   ########.fr       */
+/*   Created: 2021/12/25 19:35:33 by rahmed            #+#    #+#             */
+/*   Updated: 2021/12/25 19:36:09 by rahmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstprint(t_list *list)
 {
-	t_list	*li;
-
-	li = malloc(sizeof(t_list));
-	if (!li)
-		return (NULL);
-	li->content = content;
-	li->next = NULL;
-	return (li);
+	while (list)
+	{
+		ft_putstr_fd(list->content, 1);
+		ft_putchar_fd('\n', 1);
+		list = list->next;
+	}
 }

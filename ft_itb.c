@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_itb.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jbettini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 18:08:51 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/11 21:11:44 by jbettini         ###   ########.fr       */
+/*   Created: 2021/12/16 16:40:26 by jbettini          #+#    #+#             */
+/*   Updated: 2021/12/16 16:41:05 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_ull	ft_itb(int nb)
 {
-	t_list	*li;
+	int		i;
+	t_ull	res;
+	int		tmp[10];
 
-	li = malloc(sizeof(t_list));
-	if (!li)
-		return (NULL);
-	li->content = content;
-	li->next = NULL;
-	return (li);
+	res = 0;
+	i = 0;
+	while (nb)
+	{
+		tmp[i++] = nb % 2;
+		nb /= 2;
+	}
+	while (--i >= 0)
+	{
+		res *= 10;
+		res += tmp[i];
+	}
+	return (res);
 }
